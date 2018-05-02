@@ -1,6 +1,6 @@
 # CS50 TSE Starter Kit
 
-To get started, 
+To get started::  
 
  * click the "Fork" button above; this should create a copy of this project in your Gitlab account. 
  * 	ensure that your new project is marked *PRIVATE*.
