@@ -2,7 +2,7 @@
 #   Builds and compiles all these utility functions into a library.
 #
 # David Kotz, April 2016, July 2017
-# updated by Xia Zhou, July 2016
+# updated by Xia Zhou, July 2016, July 2018
 
 # object files, and the target library
 OBJS = bag.o counters.o file.o hashtable.o jhash.o memory.o \
@@ -33,11 +33,7 @@ memory.o: memory.h
 set.o: set.h
 webpage.o:  webpage.h
 
-.PHONY: clean sourcelist
-
-# list all the sources and docs in this directory.
-sourcelist: Makefile *.md *.c *.h
-	@echo $^
+.PHONY: clean 
 
 # clean up after our compilation
 clean:
