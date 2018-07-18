@@ -1,10 +1,10 @@
 # CS50 TSE Starter Kit
 
-To get started::  
+To get started, 
 
  * click the "Fork" button above; this should create a copy of this project in your Gitlab account. 
  * 	ensure that your new project is marked *PRIVATE*.
- * grant "Master" access to your new project to Professor and head grader.
+ * grant "Maintainer" access to your new project to Professor and head grader.
  * if you have configured SSH access to Gitlab,
 	 * copy the `git@gitlab` URL shown in the box in the middle of the screen;
  * otherwise, pick HTTPS instead of SSH above, and
@@ -23,7 +23,7 @@ To get started::
 	 * edit `crawler/Makefile`
 	 * edit `crawler/crawler.c`
 
-See [Lab 4 instructions](http://www.cs.dartmouth.edu/~cs50/Labs/Lab4)
+See [Lab 4 instructions](http://www.cs.dartmouth.edu/~cs50/Labs/Lab4.html)
 for more information.
 
 ## A replacement README
@@ -32,7 +32,7 @@ Replace this README.md with the following, and add more information as needed.
 ```
 # CS50 Tiny Search Engine
 
-My Name - Summer 2017
+My Name - Summer 2018
 
 To build, run `make`.
 
