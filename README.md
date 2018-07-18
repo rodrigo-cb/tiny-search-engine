@@ -4,7 +4,7 @@ To get started,
 
  * click the "Fork" button above; this should create a copy of this project in your Gitlab account. 
  * 	ensure that your new project is marked *PRIVATE*.
- * grant "Maintainer" access to your new project to Professor and head grader.
+ * grant "Maintainer" access to your new project to Professor and graduate TAs.
  * if you have configured SSH access to Gitlab,
 	 * copy the `git@gitlab` URL shown in the box in the middle of the screen;
  * otherwise, pick HTTPS instead of SSH above, and
