@@ -1,7 +1,6 @@
 # Makefile for CS50 Tiny Search Engine
 #
-# David Kotz - April 2016, 2017
-# updated by Xia Zhou, July 2018
+# CS50
 
 MAKE = make
 .PHONY: all valgrind clean

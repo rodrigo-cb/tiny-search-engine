@@ -1,9 +1,9 @@
 # CS50 Tiny Search Engine (TSE) utility library
 
 David Kotz, April 2016, 2017.
-Xia Zhou, July 2016.
+Xia Zhou, July 2016, January 2019.
 
-These modules support the TSE project.  Feel free to drop in your implementation of the data-structure modules, but **do not change any of the other source files in this directory.**
+These modules support the TSE project. Please drop in your implementation of the data-structure modules here, i.e., set.c, counters.c, and hashtable.c. **Do not change other source code in the current directory.**
 
 ## Usage
 To build `libcs50.a`, run `make`. 

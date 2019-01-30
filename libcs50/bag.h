@@ -8,15 +8,14 @@
  * any item from the bag. 
  *
  * David Kotz, April 2016, 2017
+ * Xia Zhou, July 2017, 2018, January 2019
  */
 
 #ifndef __BAG_H
 #define __BAG_H
 
-#include <stdio.h>
-
 /**************** global types ****************/
-typedef struct bag bag_t;  // opaque to users of the module
+typedef struct bag bag_t;  // opaque to users of the module, users do not know and cannot access members of this struct
 
 /**************** functions ****************/
 
