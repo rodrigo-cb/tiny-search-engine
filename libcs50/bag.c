@@ -4,6 +4,7 @@
  * see bag.h for more information.
  *
  * David Kotz, April 2016, 2017
+ * Xia Zhou, July 2017, 2018, January 2019
  */
 
 #include <stdio.h>
@@ -35,8 +36,7 @@ typedef struct bag {
 static bagnode_t *bagnode_new(void *item);
 
 /**************** bag_new() ****************/
-bag_t *
-bag_new(void)
+bag_t* bag_new(void)
 {
   bag_t *bag = count_malloc(sizeof(bag_t));
 
@@ -50,8 +50,7 @@ bag_new(void)
 }
 
 /**************** bag_insert() ****************/
-void
-bag_insert(bag_t *bag, void *item)
+void bag_insert(bag_t *bag, void *item)
 {
   if (bag != NULL && item != NULL) {
     // allocate a new node to be added to the list
@@ -71,8 +70,9 @@ bag_insert(bag_t *bag, void *item)
 
 /**************** bagnode_new ****************/
 /* Allocate and initialize a bagnode */
-static bagnode_t * // not visible outside this file
-bagnode_new(void *item)
+// the 'static' modifier means this function is not visible 
+// outside this file
+static bagnode_t* bagnode_new(void *item)
 {
   bagnode_t *node = count_malloc(sizeof(bagnode_t));
 
@@ -87,8 +87,7 @@ bagnode_new(void *item)
 }
 
 /**************** bag_extract() ****************/
-void *
-bag_extract(bag_t *bag)
+void* bag_extract(bag_t *bag)
 {
   if (bag == NULL) {
     return NULL; // bad bag
@@ -104,20 +103,19 @@ bag_extract(bag_t *bag)
 }
 
 /**************** bag_print() ****************/
-void
-bag_print(bag_t *bag, FILE *fp, void (*itemprint)(FILE *fp, void *item) )
+void bag_print(bag_t *bag, FILE *fp, void (*itemprint)(FILE *fp, void *item) )
 {
   if (fp != NULL) {
     if (bag != NULL) {
       fputc('{', fp);
       for (bagnode_t *node = bag->head; node != NULL; node = node->next) {
-	// print this node
-	if (itemprint != NULL) {  // print the node's item 
-	  (*itemprint)(fp, node->item); 
-	  fputc(',', fp);
-	}
+        // print this node
+        if (itemprint != NULL) {  // print the node's item 
+          fputc(' ', fp);
+          (*itemprint)(fp, node->item); 
+        }
       }
-      fputc('}', fp);
+      fputs(" }\n", fp);
     } else {
       fputs("(null)", fp);
     }
@@ -125,8 +123,7 @@ bag_print(bag_t *bag, FILE *fp, void (*itemprint)(FILE *fp, void *item) )
 }
 
 /**************** bag_iterate() ****************/
-void
-bag_iterate(bag_t *bag, void *arg, void (*itemfunc)(void *arg, void *item) )
+void bag_iterate(bag_t *bag, void *arg, void (*itemfunc)(void *arg, void *item) )
 {
   if (bag != NULL && itemfunc != NULL) {
     // call itemfunc with arg, on each item
@@ -137,8 +134,7 @@ bag_iterate(bag_t *bag, void *arg, void (*itemfunc)(void *arg, void *item) )
 }
 
 /**************** bag_delete() ****************/
-void 
-bag_delete(bag_t *bag, void (*itemdelete)(void *item) )
+void bag_delete(bag_t *bag, void (*itemdelete)(void *item) )
 {
   if (bag != NULL) {
     for (bagnode_t *node = bag->head; node != NULL; ) {
