@@ -3,16 +3,12 @@
 # CS50
 
 MAKE = make
-.PHONY: all valgrind clean
 
 PROG = crawler
-OBJS = crawler.o
-LIBS =
+OBJS = crawler.o ../common/pagedir.o
+LIBS = ../libcs50/libcs50.a
 
-# uncomment the following to turn on verbose memory logging
-# TESTING=-DMEMTEST
-
-CFLAGS = -Wall -pedantic -std=c11 -ggdb $(TESTING)#-I../common
+CFLAGS = -Wall -pedantic -std=c11 -ggdb -I../common -I../libcs50
 CC = gcc
 MAKE = make
 
