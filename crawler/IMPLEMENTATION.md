@@ -17,7 +17,7 @@ Additionally, the crawler also makes use of the *webpage* module in the *libcs50
 Finally it makes use of the *pagedir* module in the *common/* directory. This is used to write the websites found into files in the pageDirectory given.
 
 The functionality of *crawler.c* can be mainly divided into:
--*main*: High-level logic, basically calls check_input and crawl
--*check_input*: Makes sure the input is valid, cheching for correct number of arguments, types of arguments, and validity of seed URL.
--*crawl*: performs the actual web-crawl loop, calls *pagescanner*
--*pagescanner*: Finds URLs that are contained in the current webpage, and (if internal and new) adds them to the *bag* and *hashtable* so the crawl loop visits them.
+*main*: High-level logic, basically calls check_input and crawl
+*check_input*: Makes sure the input is valid, cheching for correct number of arguments, types of arguments, and validity of seed URL.
+*crawl*: performs the actual web-crawl loop, calls *pagescanner*
+*pagescanner*: Finds URLs that are contained in the current webpage, and (if internal and new) adds them to the *bag* and *hashtable* so the crawl loop visits them.
