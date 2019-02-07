@@ -6,13 +6,13 @@
 Testing was performed using the testing script `crawl_test.sh`.
 
 This tests a variety of error cases:
-nonexistent domain
-wrong number of arguments
-nonexistent webpage in internal domain
-non-internal seed URL
-Negative number given on maxDepth
-Non-number given on maxDepth
-pageDirectory that doesnt exist
+* nonexistent domain
+* wrong number of arguments
+* nonexistent webpage in internal domain
+* non-internal seed URL
+* Negative number given on maxDepth
+* Non-number given on maxDepth
+* pageDirectory that doesnt exist
 
 As well as one success case (or more, depending on which lines of crawl_test.sh are commented/uncommented).
 
