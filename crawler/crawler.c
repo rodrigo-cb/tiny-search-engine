@@ -78,15 +78,16 @@ void crawl(char *argv[])
     //Check_input already made sure it's internal, so we just add seedURL to the bag
     webpage_t *seed_page = webpage_new(seed_url, 0, NULL);
     bag_insert(bag, seed_page);
-    int page_id = 1; // counter for number of pages
+    int page_id = 1; // counter for number of pages retrieved
+
     //loop through bag of URLs to visit
     webpage_t *webpage;
     while ( (webpage = bag_extract(bag)) != NULL){
         if (webpage_fetch(webpage)){
-            write_to_dir(dirname, webpage, page_id);
+            write_to_dir(dirname, webpage, page_id); //create and write a file in dirname
             page_id ++;
             if (webpage_getDepth(webpage) < max_depth){
-                pagescanner(bag, ht, webpage);
+                pagescanner(bag, ht, webpage); //This scans and adds new URLs to Hashtable and Webpages to the bag,
             }
         }
         else {
@@ -94,14 +95,16 @@ void crawl(char *argv[])
             fprintf(stderr, "failed to fetch webpage %s\n", webpage_getURL(webpage));
         }
         webpage_delete(webpage);
-        //webpage = bag_extract(bag); 
     }
     hashtable_delete(ht, itemdelete);
     bag_delete(bag, itemdelete);
+
     // If at least one page was written
     if (page_id > 1) printf("Done writing webpage files into %s/\n", dirname);
 }
 
+/* Deletes a generic item
+*/
 void itemdelete(void* item)
 {
   if (item != NULL) {

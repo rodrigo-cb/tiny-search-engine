@@ -2,7 +2,7 @@
 ## Rodrigo A. Cavero Blades, CS50 Winter 2019
 
 ### IMPLEMENTATION
-
+---
 The crawler makes use of the *libcs50.a* library, specifically the *bag* module and the *hashtable* module.
 
 The *bag* is used to store the websites which need to be visited, initially just the seedURL.

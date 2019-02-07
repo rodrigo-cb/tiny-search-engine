@@ -2,8 +2,7 @@
 ## Rodrigo A. Cavero Blades, CS50 Winter 2019
 
 ### TESTING
-
-
+---
 Testing was performed using the testing script `crawl_test.sh`.
 
 This tests a variety of error cases:

@@ -17,7 +17,7 @@ void write_to_dir (char* dirname, webpage_t *page, int id){
     snprintf(id_str, id_length + 1, "%d", id);
 
     char *file_name = malloc(strlen(dirname) + strlen(id_str) + 2);
-    file_name[0] = '\0';              // make sure we have a clean string
+    file_name[0] = '\0';        // make sure we have a clean string
     strcat(file_name, dirname);
     strcat(file_name, "/");
     strcat(file_name, id_str);
