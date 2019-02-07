@@ -1,0 +1,18 @@
+Usage: ./crawler seedURL pageDirectory maxDepth
+Error: seed URL http://non-existent-website19837.edu/page/ is not internal
+Error: seed URL https://en.wikipedia.org/wiki/Science/ is not internal
+failed to fetch webpage http://old-www.cs.dartmouth.edu/~cs50/data/tse/nonexistentwebpage/
+maxDepth is not a valid number
+maxDepth is not a valid number
+The directory doesn't exist or is not writable
+Ignored non-internal URL https://en.wikipedia.org/wiki/Algorithm
+Ignored non-internal URL https://en.wikipedia.org/wiki/Breadth-first_search
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found url: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Done writing webpage files into data/

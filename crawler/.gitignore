@@ -6,7 +6,7 @@
 # You can list them all here, or you can  add a .gitignore file
 *.o
 *~
-.gitignore
+crawler
 # in each subdirectory.
 
 # What follows affect this top-level directory and all subdirectories.
