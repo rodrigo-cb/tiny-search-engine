@@ -17,7 +17,9 @@ The crawler pauses for one second in between page fetches.
 ./crawler seedURL pageDirectory maxDepth
 
 where *seedURL* is used as the initial URL (must be an internal URL).
+
 where *pageDirectory* is the pathname for an existing directory in which to write downloaded webpages.
+
 where *maxDepth* is a non-negative integer representing the maximum crawl depth.
 
 # Return Values:
