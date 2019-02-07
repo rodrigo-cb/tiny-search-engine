@@ -21,12 +21,12 @@ where *pageDirectory* is the pathname for an existing directory in which to writ
 where *maxDepth* is a non-negative integer representing the maximum crawl depth.
 
 # Return Values:
->0: No errors.
->1: Wrong number of input arguments.
->2: Seed URL can't be normalized.
->3: Non-internal seed URL.
->4: Directory doesn't exist or is not writeable.
->5: MaxDepth is not a valid number.
+* 0: No errors.
+* 1: Wrong number of input arguments.
+* 2: Seed URL can't be normalized.
+* 3: Non-internal seed URL.
+* 4: Directory doesn't exist or is not writeable.
+* 5: MaxDepth is not a valid number.
 
 # Assumptions:
 No relevant assumptions other than those made clear above.
