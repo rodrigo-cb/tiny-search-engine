@@ -10,13 +10,14 @@
 
 /* Write the given webpapge into a file in the given directory. */
 void write_to_dir (char* dirname, webpage_t *page, int id){
+
     //first convert the id to string
     int id_length = snprintf( NULL, 0, "%d", id);  //to get the lenght of the id string
     char *id_str = malloc(id_length + 1);
     snprintf(id_str, id_length + 1, "%d", id);
 
     char *file_name = malloc(strlen(dirname) + strlen(id_str) + 2);
-    file_name[0] = '\0';
+    file_name[0] = '\0';              // make sure we have a clean string
     strcat(file_name, dirname);
     strcat(file_name, "/");
     strcat(file_name, id_str);
