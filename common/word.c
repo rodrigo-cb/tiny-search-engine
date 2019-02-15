@@ -7,6 +7,7 @@
 #include <ctype.h>
 #include "word.h"
 
+/**************** make_lower_case() ****************/
 void make_lower_case (char ** word_address)
 {
     char *word = *word_address;

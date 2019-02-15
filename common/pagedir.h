@@ -9,11 +9,6 @@
 #include "webpage.h"
 #include "bag.h"
 
-// typedef struct page_and_id {
-//   webpage_t *page;	      // pointer to webpage
-//   int id;                 // id num
-// } page_and_id_t;
-
 /* Write the given webpapge into a file in the given directory. */
 void write_to_dir (char* dirname, webpage_t *page, int id);
 

@@ -4,7 +4,7 @@
 
 Rodrigo A. Cavero Blades - Winter 2019
 
-To build, run `make`.
+To build, run `make`. (if libcs50.a and common.a aren't already made, make them first, or run make from top-level directory to make everything)
 
 To clean up, run `make clean`.
 

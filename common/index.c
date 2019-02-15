@@ -70,10 +70,6 @@ index_t *index_new(const int num_slots)
             printf("(null)");
             return;
         }
-        // for (int i = 0; i < idx->size; i++){
-        //     printf("[%d]", i);
-        //     set_print(idx->array[i], fp, ctrs_print);
-        // }
         index_iterate(idx, fp, ctrs_print);
     }
 
@@ -134,24 +130,10 @@ index_t *index_new(const int num_slots)
             }
             free(word);
             word = readwordp(fp);
-            //printf("%s\n", word);
-            // while ( word != NULL && strlen(word) == 0) {
-            //     word = readwordp(fp);
-            // }
         }
+        fclose(fp);
         return idx;
     }
-
-    /****************ctrs_print() ****************/
-    //Helper function that prints a counters item
-    // static void ctrs_print(FILE *fp, const char *key, void *item)
-    // {
-    //     counters_t* ct = item;
-    //     if (ct != NULL) {
-    //         fprintf(fp, "%s: ", key);
-    //         counters_print(ct, fp);
-    //     }
-    // }
 
       /****************ctrs_print() ****************/
     //Helper function that prints a counters item

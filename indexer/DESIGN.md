@@ -12,22 +12,22 @@ Indextest will read a indexer-produced file and recreate an index data structure
 
 Words that are less than 3 characters long are ignored, and all words are converted to lower-case.
 
-#### Very high-level description of the indexer and indextest:
+#### High-level description of the indexer and indextest:
 
 indexer:
 
 * Process and validate command-line parameters
 * Initialize data structure index
 * index_build(directory, index)
-* index_save(file, index);
+* index_save(index, filename);
 * clean up data structures
 
 indextest:
 
 * Process and validate command-line parameters
 * Initialize data structure index
-* index_load(file1, index)
-* index_save(file2, index)
+* index_load(index, filename)
+* index_save(index, filename)
 * clean up data structures
 
 The resulting file contains one line per word, one word per line

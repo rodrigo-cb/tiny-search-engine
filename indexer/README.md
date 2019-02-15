@@ -4,7 +4,7 @@
 
 Rodrigo A. Cavero Blades - Winter 2019
 
-To build, run `make`.
+To build, run `make`. (if libcs50.a and common.a aren't already made, make them first, or run make from top-level directory to make everything)
 
 To clean up, run `make clean`.
 
@@ -30,3 +30,5 @@ pageDirectory has files named 1, 2, 3, …, without gaps.
 
 The content of files in pageDirectory follow the following format: 
 1st line contains URL, 2nd line contains page depth, rest of file contains html
+
+the directory name given will not contain a '/'.
