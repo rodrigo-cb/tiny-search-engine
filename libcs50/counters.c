@@ -165,14 +165,14 @@ void counters_iterate(counters_t *ctrs, void *arg, void (*itemfunc)(void *arg, c
 /**************** counters_delete() ****************/
 void counters_delete(counters_t *ctrs)
 {
-    if (ctrs != NULL) {
-    for (countersnode_t *node = ctrs->head; node != NULL; ) {
-      countersnode_t *next = node->next;	    // remember what comes next
-      count_free(node);			    // free the node
-      node = next;			    // and move on to next
-    }
-    count_free(ctrs);
+  if (ctrs != NULL) {
+  for (countersnode_t *node = ctrs->head; node != NULL; ) {
+    countersnode_t *next = node->next;	    // remember what comes next
+    free(node);			    // free the node
+    node = next;			    // and move on to next
   }
+  free(ctrs);
+}
 
 #ifdef MEMTEST
     count_report(stdout, "End of counters_delete");

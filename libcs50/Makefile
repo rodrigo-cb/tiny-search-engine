@@ -22,7 +22,11 @@ MAKE = make
 $(LIB): $(OBJS)
 	ar cr $(LIB) $(OBJS)
 
+# $(LIB):
+# 	cp $(LIB)-Linux $(LIB)
+
 # Dependencies: object files depend on header files
+
 bag.o: bag.h
 counters.o: counters.h
 file.o: file.h
