@@ -12,7 +12,7 @@ Indextest will read a indexer-produced file and recreate an index data structure
 
 Words that are less than 3 characters long are ignored, and all words are converted to lower-case.
 
-*Very high-level description of the indexer and indextest.*
+#### Very high-level description of the indexer and indextest:
 
 indexer:
 
