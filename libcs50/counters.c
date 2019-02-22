@@ -115,7 +115,7 @@ int counters_get(counters_t *ctrs, const int key)
 /**************** counters_set() ****************/
 void counters_set(counters_t *ctrs, const int key, int count)
 {
-    if (ctrs != NULL && key > 0 && count > 0){
+    if (ctrs != NULL && key >= 0 && count >= 0){
         for (countersnode_t *node = ctrs->head; node != NULL; node = node->next) {
             if (node->key == key){
                 node->counter = count;
@@ -145,7 +145,7 @@ void counters_print(counters_t *ctrs, FILE *fp)
       }
       fputs(" }\n", fp);
     } else {
-      fputs("(null)", fp);
+      fputs("(null)\n", fp);
     }
   }
 }
