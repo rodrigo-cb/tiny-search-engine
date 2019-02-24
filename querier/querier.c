@@ -131,7 +131,7 @@ void process_query(index_t *idx, char * dirname)
         int word_count = exctract_words(line, words);
 
         // If it's a valid query...
-        if (check_query(words, word_count)){
+        if (word_count > 0 && check_query(words, word_count)){
             // Print cleaned-up query
             printf("Query:");
             for (int i = 0; i < word_count; i ++){
@@ -190,7 +190,7 @@ int exctract_words(char * line, const char* arr[])
 bool check_query(const char * arr[], int count)
 {
     // check for empty query
-    if (count < 1){
+    if (arr[0] == NULL || strcmp(arr[0], " ") == 0 || strcmp(arr[0], "") == 0){
         return false;
     }
 
@@ -219,8 +219,8 @@ bool check_query(const char * arr[], int count)
 void run_query(index_t *idx, char * dirname, const char * arr[], int size)
 {
     counters_t *result = ctrs_sum(idx, arr, size);
-    printf("Done!!!\n");
-    counters_print(result, stdout);
+    // printf("Done!!!\n");
+    // counters_print(result, stdout);
 
     // Count the number of matches
     int num_matches = 0;
@@ -253,7 +253,7 @@ void run_query(index_t *idx, char * dirname, const char * arr[], int size)
         printf("Score: %d, docID: %d : %s\n", doc->score, doc->ID, doc->URL);
     }
 
-    // Cleanup
+    //Cleanup
     for (int i = 0; i < num_matches; i ++){
         document_t *doc = ranked_list[i];
         free(doc->URL);
@@ -428,10 +428,11 @@ static void matches_sort(void *arg, const int docID, int myScore)
     this_doc -> score = myScore;
     this_doc -> ID = docID;
     this_doc -> URL = URL;
-    int i = 0;
+    
 
     // Insert doc into correct place in the array. 
-    // (Insertion Sort)
+    // (Insertion Sort style)
+    int i = 0;
     while (i < arr_length){
         document_t *doc = arr[i];
         if (doc == NULL) {
@@ -439,12 +440,11 @@ static void matches_sort(void *arg, const int docID, int myScore)
             return;
         } 
         if (doc->score < myScore) {
-            for (int j = i; j < arr_length - 1; j ++){
+            for (int j = arr_length - 2; j >= i; j --){
                 arr[j + 1] = arr[j];
-                arr[i] = this_doc;
-
-                return;
             }
+            arr[i] = this_doc;
+            return;
         } 
         i ++;
     }

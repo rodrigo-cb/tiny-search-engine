@@ -1,0 +1,52 @@
+Usage: ./querier pageDirectory indexFilename
+pageDirectory is not an existing directory produced by the crawler
+indexFilename is not a readable file
+invalid character '-' in query
+Please enter your query
+Error: the words: "and" "or" cannot be first or last
+Error: the words: "and" "or" cannot be first or last
+Error: cannot have two consecutive operators
+Query: mobile
+Matches 6 documents (ranked) :
+Score: 4, docID: 5 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+Score: 2, docID: 2 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+Score: 2, docID: 3 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+Score: 2, docID: 4 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+Score: 2, docID: 6 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+Score: 2, docID: 7 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+Query: mobile and versions
+Matches 2 documents (ranked) :
+Score: 4, docID: 5 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+Score: 2, docID: 6 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+Query: mobile versions
+Matches 2 documents (ranked) :
+Score: 4, docID: 5 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+Score: 2, docID: 6 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+Query: architect
+Matches 1 documents (ranked) :
+Score: 1, docID: 4 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+Query: mobile and versions or architect
+Matches 3 documents (ranked) :
+Score: 4, docID: 5 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+Score: 2, docID: 6 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+Score: 1, docID: 4 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+Query: lovelace
+Matches 1 documents (ranked) :
+Score: 2, docID: 7 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+Query: lovelace and large
+Matches 1 documents (ranked) :
+Score: 2, docID: 7 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+Query: cpu
+Matches 3 documents (ranked) :
+Score: 3, docID: 2 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+Score: 2, docID: 3 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+Score: 1, docID: 5 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+Query: rid
+Matches 1 documents (ranked) :
+Score: 1, docID: 2 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+Query: lovelace and large or cpu or rid
+Matches 4 documents (ranked) :
+Score: 4, docID: 2 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+Score: 2, docID: 3 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+Score: 2, docID: 7 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+Score: 1, docID: 5 : http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
