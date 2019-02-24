@@ -109,13 +109,6 @@ int check_input(int argc, char *argv[])
 */
 void process_query(index_t *idx, char * dirname)
 {
-//     1. while (line = getting a new line from stdin) // readlinep()
-// 1.0 extract the words, normalize it (extract_words(line, words))
-// 1.1 if we have non-zero words
-// 1.2 	if (check the validity of query) (check_query(words))
-// 1.3 	run_query(words)
-// 1.4 	clean up memory (line or more)
-
     // Max number of words we expect on a single query
     const int MAX_QUERY_SIZE = 100;
 
@@ -219,8 +212,6 @@ bool check_query(const char * arr[], int count)
 void run_query(index_t *idx, char * dirname, const char * arr[], int size)
 {
     counters_t *result = ctrs_sum(idx, arr, size);
-    // printf("Done!!!\n");
-    // counters_print(result, stdout);
 
     // Count the number of matches
     int num_matches = 0;
@@ -300,21 +291,11 @@ counters_t* ctrs_product (index_t *idx, const char * arr[], int pos, int * posAd
 */
 counters_t* ctrs_sum (index_t *idx, const char * arr[], int size) {
     counters_t *running_sum = counters_new();
-    // for (int i = 0; i < size; i++){
-    //     char * word = arr[i];
-    // }
     int pos = 0;
     while (pos < size){
-        //printf("Pos is: %d\n", pos);
         counters_t *product = ctrs_product(idx, arr, pos, &pos, size);
-        // printf("printing prod:\n");
-        // counters_print(product, stdout);
         counters_merge(running_sum, product);
-        //printf("printing partial running sum:\n");
-        //counters_print(running_sum, stdout);
     }
-    // printf("printing final running sum:\n");
-    // counters_print(running_sum, stdout);
     return running_sum;
 }
 
@@ -334,18 +315,15 @@ static void
 counters_merge_helper(void *arg, const int key, int count_B)
 {
   counters_t *ctrs_A = arg;
-  //int *itemB = item;
   
   // find the same key in setA
   int count_A = counters_get(ctrs_A, key);
   if (count_A == 0) {
     // not found: insert it
     counters_set(ctrs_A, key, count_B);
-    //printf("\t%s added\n", key);
   } else {
     // add to the existing value
     counters_set(ctrs_A, key, counters_get(ctrs_A, key) + count_B);
-    //printf("\t%s exists\n", key);
   }
 }
 
@@ -355,17 +333,10 @@ counters_merge_helper(void *arg, const int key, int count_B)
 static void 
 counters_intersect(counters_t *ctrs_A, counters_t *ctrs_B)
 {
-    //printf("IN COUNTERS INTERSECT \n");
     two_ctrs_t *two_ctrs = malloc(sizeof(two_ctrs_t));
     two_ctrs->c1 = ctrs_A;
-    //printf("COUNTERS A: \n");
-    // counters_print(ctrs_A, stdout);
     two_ctrs->c2 = ctrs_B;
-    //printf("COUNTERS B: \n");
     counters_iterate(ctrs_A, two_ctrs, counters_intersect_helper);
-
-    //printf("RESULT: \n");
-    //counters_print(two_ctrs->c1, stdout);
     free(two_ctrs);
   
 }
@@ -382,12 +353,10 @@ counters_intersect_helper(void *arg, const int key, int count_A)
     if (count_B == 0) {
         // not found this key in counters B, set the int to zero
         counters_set(two_ctrs->c1, key, 0);
-        //printf("Setting key %d to 0\n", key);
     } else {
         // found the key, take the minimum
         count_A = count_A < count_B ? count_A : count_B;
         counters_set(two_ctrs->c1, key, count_A);
-        //printf("Setting key %d to %d\n", key, count_A);
     }
 }
 
