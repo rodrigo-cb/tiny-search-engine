@@ -33,6 +33,8 @@ The content of files in pageDirectory follow the following format:
 
 the directory name given will not contain a '/'.
 
-The *indexFilename* file contains one line per word, one word per line
+A single query will not contain more than 100 words.
+
+The *indexFilename* file contains one line per word, one word per line,
 each line provides the word and one or more (docID, count) pairs, in the format
 word docID count [docID count]…

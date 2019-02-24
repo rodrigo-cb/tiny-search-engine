@@ -100,3 +100,18 @@ void read_from_dir(char* dirname, bag_t *bag)
         strcat(filename, file_id);
     }
 }
+
+/* Returnss the URL of a document. Requires the name of a crawler-produced directory
+ * and the document's ID. Caller must later free pointer of URL.
+*/
+char *get_doc_URL(char * dirname, int docID)
+{
+    int buffer_size = strlen(dirname) + 10 + 1 + 1; //Enough space for largest int
+    char filename[buffer_size];
+    sprintf(filename, "%s/%d", dirname, docID);
+
+    FILE *fp = assertp(fopen(filename, "r"), "Failed to open file in get_doc_URL");
+    char* URL = readlinep(fp);
+    fclose(fp);
+    return URL;
+}
