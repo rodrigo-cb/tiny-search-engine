@@ -20,6 +20,6 @@ The output from this testing script can be found in `querier_test_out`, produced
 
 The files needed for this are `crawl_dir` and `index_file`.
 
-I went through the test results and through the relevand entries in the index file to madk sure it was performing the right operations.
+I went through the test results and through the relevand entries in the index file to make sure it was performing the right operations.
 
 I ran valgrind on both indexer and indextest and made sure no memory leaks or errors were possible.
