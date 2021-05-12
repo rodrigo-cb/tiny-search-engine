@@ -1,13 +1,7 @@
-## README
-```
 # CS50 Tiny Search Engine
-
-Rodrigo A. Cavero Blades - Winter 2019
+This program was made as part of the COSC50 Dartmouth course. It consists of an indexer, querier, and crawler. For more details, refer to the `DESIGN.md` and `IMPLEMENTATION.md` files in each of the respective directories.
+<br/>
 
 To build, run `make`.
 
 To clean up, run `make clean`.
-
-The CS50 playground is in 
-http://old-www.cs.dartmouth.edu/~cs50/data/tse
-```
