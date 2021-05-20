@@ -4,6 +4,8 @@
 
 Rodrigo A. Cavero Blades - Winter 2019
 
+This Indexer was built to satisfy the following [requirements](https://github.com/cs50spring2021/tse-labs/blob/main/indexer/REQUIREMENTS.md) 
+
 To build, run `make`. (if libcs50.a and common.a aren't already made, make them first, or run make from top-level directory to make everything)
 
 To clean up, run `make clean`.
