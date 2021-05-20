@@ -4,7 +4,7 @@
 
 Rodrigo A. Cavero Blades - Winter 2019
 
-This Crawler was built with the purpose of satisfying the following [requirements](https://github.com/cs50spring2021/tse-labs/blob/main/querier/REQUIREMENTS.md) 
+This Crawler was built to satisfy the following [requirements](https://github.com/cs50spring2021/tse-labs/blob/main/querier/REQUIREMENTS.md) 
 
 To build, run `make`. (if libcs50.a and common.a aren't already made, make them first, or run make from top-level directory to make everything)
 
